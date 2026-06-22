@@ -1,27 +1,22 @@
 from src.scheduler import (
     load_jobs,
-    schedule_jobs,
-    allocate_machines,
-    display_schedule,
-    display_machine_schedule,
-    simulate_machine_breakdown
+    detect_health_based_failure,
+    calculate_kpis,
+    reroute_risky_operations,
+    export_updated_schedule
 )
 
-jobs = load_jobs("data/production_data.csv")
+# Load realistic shopfloor execution data
+shopfloor_data = load_jobs("data/shopfloor_schedule.csv")
 
-# Step 1: Prioritize jobs
-schedule = schedule_jobs(jobs)
-display_schedule(schedule)
+# Detect risky machines
+risky_machines = detect_health_based_failure(shopfloor_data)
 
-# Step 2: Allocate to machines
-machine_schedule = allocate_machines(schedule)
-display_machine_schedule(machine_schedule)
-
-# Step 3: Simulate machine breakdown
-updated_schedule = simulate_machine_breakdown(
-    machine_schedule,
-    "M2_Milling"
+# Calculate KPIs
+calculate_kpis(shopfloor_data, shopfloor_data)
+# Reroute risky operations
+rerouted_schedule = reroute_risky_operations(
+    shopfloor_data
 )
-
-print("\n--- Updated Schedule After Breakdown ---")
-display_machine_schedule(updated_schedule)
+# Export the updated schedule with rerouted operations
+export_updated_schedule(rerouted_schedule)

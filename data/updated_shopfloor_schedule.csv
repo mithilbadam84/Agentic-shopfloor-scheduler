@@ -1,0 +1,13 @@
+Work_Order_ID,Machine,Setup_Time,Process_Time,Queue_Time,Start_Time,End_Time,Shift,Machine_Health,Rework_Flag,Priority,Due_Date,Status
+WO015,M1_Cutting,8,22,0,08:00,08:30,Shift_A,92,No,1,4,Running
+WO015,M2_Milling,5,22,10,08:40,09:07,Shift_A,78,No,1,4,Waiting
+WO015,M3_Drilling,4,22,5,09:12,09:38,Shift_A,88,No,1,4,Pending
+WO015,M4_Inspection,3,10,2,09:40,09:53,Shift_A,95,No,1,4,Pending
+WO008,M1_Cutting,7,20,0,08:30,08:57,Shift_A,92,No,1,5,Running
+WO008,M2_Milling,5,20,12,09:10,09:35,Shift_A,78,No,1,5,Waiting
+WO008,M3_Drilling,4,20,6,09:41,10:05,Shift_A,88,No,1,5,Pending
+WO008,M4_Inspection,3,8,2,10:07,10:18,Shift_A,95,No,1,5,Pending
+WO003,M1_Cutting,6,25,0,08:57,09:28,Shift_A,92,No,1,6,Running
+WO003,M2_Backup_Milling,5,25,8,09:36,10:06,Shift_A,42,No,1,6,Waiting
+WO003,M3_Drilling,4,25,7,10:13,10:42,Shift_A,88,Yes,1,6,Pending
+WO003,M4_Inspection,3,12,2,10:44,10:59,Shift_A,95,No,1,6,Pending
